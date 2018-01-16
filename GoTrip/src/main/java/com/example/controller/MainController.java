@@ -85,7 +85,7 @@ public class MainController {
 		Iterable<Spot> spots = spotDao.findByTourAndDayOrderBySequenceAsc(tour, 1);
 		model.addObject("spots", spots);
 		model.addObject("tour", tour);
-
+		
 		//天數資料串列
 		ArrayList<Integer> dayList = new ArrayList<>();
 		for (int i = 1; i <= tour.getDays(); i++)
@@ -119,7 +119,7 @@ public class MainController {
 		ArrayList<Spot> nextSpots = new ArrayList<Spot>();
 		//儲存nextDay的所有景點於串列
 		nextSpots = (ArrayList<Spot>) spotDao.findByTourAndDayOrderBySequenceAsc(whichTour, nextDay);
-
+		
 		return nextSpots;
 	}
 
